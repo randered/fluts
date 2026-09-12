@@ -164,12 +164,6 @@ Solve a raw text input (one or more test cases):
 curl -X POST http://localhost:8080/api/fluts/solve -H "Content-Type: text/plain" --data-binary $'1\n6 12 3 10 7 16 5\n2\n5 7 3 11 9 10\n9 1 2 3 4 10 16 10 4 16\n0'
 ```
 
-In **PowerShell**, use `curl.exe` and backtick line breaks for the raw text body:
-
-```powershell
-curl.exe -X POST http://localhost:8080/api/fluts/solve -H "Content-Type: text/plain" --data-binary "1`n6 12 3 10 7 16 5`n2`n5 7 3 11 9 10`n9 1 2 3 4 10 16 10 4 16`n0"
-```
-
 ## Project layout
 
 ```

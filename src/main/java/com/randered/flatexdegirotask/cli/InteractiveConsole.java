@@ -65,7 +65,7 @@ public class InteractiveConsole implements CommandLineRunner {
             try {
                 line = reader.readLine();
             } catch (IOException e) {
-                out.print("Error reading input: " + e.getMessage() + "\n");
+                out.print("\n" + "Error reading input: " + e.getMessage() + "\n");
                 break;
             }
             if (line == null) {
@@ -95,7 +95,7 @@ public class InteractiveConsole implements CommandLineRunner {
             try {
                 piles = readPiles(reader, z);
             } catch (IOException e) {
-                out.print("Error reading input: " + e.getMessage() + "\n");
+                out.print("\n" + "Error reading input: " + e.getMessage() + "\n");
                 break;
             }
 
