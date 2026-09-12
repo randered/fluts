@@ -2,6 +2,7 @@ package com.randered.flatexdegirotask.service;
 
 import com.randered.flatexdegirotask.domain.FlutResult;
 import com.randered.flatexdegirotask.domain.Pile;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import java.util.TreeSet;
  * maximum total profit is the sum of the per-pile maximum prefix profit. The total number of fluts that
  * achieve this profit is the Minkowski sum of the per-pile optimal-prefix count sets.
  */
+@Slf4j
 @Service
 public class FlutSolver {
 
@@ -33,7 +35,9 @@ public class FlutSolver {
         }
 
         List<Integer> counts = smallestAchievableCounts(optimalCountSets);
-        return new FlutResult(totalMaxProfit, counts);
+        FlutResult result = new FlutResult(totalMaxProfit, counts);
+        log.info("Solved: piles={}, maxProfit={}, counts={}", piles.size(), result.maxProfit(), result.counts());
+        return result;
     }
 
     private long[] prefixProfits(Pile pile) {
