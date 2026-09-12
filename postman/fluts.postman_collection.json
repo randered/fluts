@@ -1,0 +1,73 @@
+{
+  "info": {
+    "name": "Flut Trading Optimizer",
+    "description": "REST API for the flut trading problem. Solve raw text input or a single JSON test case.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Solve raw text input",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "1\n6 12 3 10 7 16 5\n2\n5 7 3 11 9 10\n9 1 2 3 4 10 16 10 4 16\n0\n"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/fluts/solve",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "fluts",
+            "solve"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Solve a single test case (JSON)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"piles\": [[12, 3, 10, 7, 16, 5]]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/fluts/solve/testcase",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "fluts",
+            "solve",
+            "testcase"
+          ]
+        }
+      }
+    }
+  ]
+}
